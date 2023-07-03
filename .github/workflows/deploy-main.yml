@@ -43,6 +43,8 @@ jobs:
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          VITE_WALLET_CONNECT_PROJECT_ID: ${{ secrets.WALLET_CONNECT_PROJECT_ID }}
+          VITE_ALCHEMY_ID: ${{ secrets.ALCHEMY_ID }}
         run: aws s3 cp --recursive --region ap-northeast-1 dist s3://${{ secrets.S3_BUCKET_ID }}
 
       # - name: Invalidate CloudFront
