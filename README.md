@@ -4,7 +4,8 @@ For `Decreasing Frictions in DeFi` Hackathon
 
 ## Description
 
-우리 프로덕트 설명
+Solution to “Why DeFi?” An all-in-one dApp with a frictionless experience in exploring, investing in various DeFi opportunities without the need to leave the dApp even once.
+
 
 ## 0x Swap API
 
