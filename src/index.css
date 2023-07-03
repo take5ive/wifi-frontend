@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Outfit';
+}
+
+.btn {
+  @apply flex justify-center items-center font-medium rounded-lg px-4 h-10 leading-none disabled:bg-opacity-90;
+}
+
+.btn-left-icon {
+  @apply font-medium rounded-lg flex items-center pl-2.5 pr-4 h-10;
+}
+.btn-sm {
+  @apply font-medium text-sm py-[5px] px-3 rounded-lg;
+}
+
+.btn-primary {
+  @apply text-white bg-primary-500 hover:enabled:bg-primary-600;
+}
+.btn-secondary {
+  @apply text-white bg-neutral-800 hover:enabled:bg-neutral-600 disabled:bg-neutral-500;
+}
+
+.btn-primary-o {
+  @apply text-primary-500 bg-white border border-primary-500 hover:bg-neutral-50;
+}
+
+.thin-scroll {
+  scrollbar-width: thin;
+}
+
+.code {
+  font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono,
+    DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+  transform: translateY(0.065em);
+  font-size: 0.875rem;
+  letter-spacing: 0.002em;
+}

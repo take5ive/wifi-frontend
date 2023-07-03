@@ -1,0 +1,561 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "WETH_",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "inputs": [],
+    "name": "WETH",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "lpAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "liquidity",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address[]",
+        "name": "path1",
+        "type": "address[]"
+      },
+      {
+        "internalType": "address[]",
+        "name": "path2",
+        "type": "address[]"
+      },
+      {
+        "internalType": "uint32",
+        "name": "feeBps",
+        "type": "uint32"
+      }
+    ],
+    "name": "calculateDstTokenByRemoveLiquidity",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "dstAmount",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "baseToken",
+        "type": "address"
+      },
+      {
+        "internalType": "contract IUniswapV2Pair",
+        "name": "farmPair",
+        "type": "address"
+      },
+      {
+        "internalType": "uint112",
+        "name": "baseAmount",
+        "type": "uint112"
+      }
+    ],
+    "name": "calculateOptimalDecomposeAmount",
+    "outputs": [
+      {
+        "internalType": "uint112",
+        "name": "swapAmount0",
+        "type": "uint112"
+      },
+      {
+        "internalType": "uint112",
+        "name": "swapAmount1",
+        "type": "uint112"
+      },
+      {
+        "internalType": "uint112",
+        "name": "farmAmount0",
+        "type": "uint112"
+      },
+      {
+        "internalType": "uint112",
+        "name": "farmAmount1",
+        "type": "uint112"
+      },
+      {
+        "internalType": "uint256",
+        "name": "liquidity",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint112",
+        "name": "remainedBaseAmount",
+        "type": "uint112"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "contract IUniswapV2Pair",
+        "name": "pair",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "baseToken",
+        "type": "address"
+      },
+      {
+        "internalType": "uint112",
+        "name": "baseAmount",
+        "type": "uint112"
+      },
+      {
+        "internalType": "uint112",
+        "name": "farmAmount",
+        "type": "uint112"
+      }
+    ],
+    "name": "calculateOptimalRebalanceAmount",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "swapAmount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "swappedAmount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "liquidity",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "swap0",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "baseToken",
+        "type": "address"
+      },
+      {
+        "internalType": "contract IUniswapV2Pair",
+        "name": "farmPair",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "internalType": "uint112",
+        "name": "baseAmount",
+        "type": "uint112"
+      }
+    ],
+    "name": "decomposeAndAddLiquidity",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "liquidity",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "feeOf",
+    "outputs": [
+      {
+        "internalType": "uint32",
+        "name": "",
+        "type": "uint32"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "baseAmount",
+        "type": "uint256"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint112",
+            "name": "reserveb0b",
+            "type": "uint112"
+          },
+          {
+            "internalType": "uint112",
+            "name": "reserveb00",
+            "type": "uint112"
+          },
+          {
+            "internalType": "uint32",
+            "name": "feeb0Bps",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint112",
+            "name": "reserveb1b",
+            "type": "uint112"
+          },
+          {
+            "internalType": "uint112",
+            "name": "reserveb11",
+            "type": "uint112"
+          },
+          {
+            "internalType": "uint32",
+            "name": "feeb1Bps",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint112",
+            "name": "reserve010",
+            "type": "uint112"
+          },
+          {
+            "internalType": "uint112",
+            "name": "reserve011",
+            "type": "uint112"
+          }
+        ],
+        "internalType": "struct UniswapV2Funnel.Reserves3",
+        "name": "reserves",
+        "type": "tuple"
+      }
+    ],
+    "name": "optimalDecomposeAmount",
+    "outputs": [
+      {
+        "internalType": "uint112",
+        "name": "swapAmount0",
+        "type": "uint112"
+      }
+    ],
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "amount0",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount1",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint112",
+        "name": "reserve0",
+        "type": "uint112"
+      },
+      {
+        "internalType": "uint112",
+        "name": "reserve1",
+        "type": "uint112"
+      },
+      {
+        "internalType": "uint32",
+        "name": "feeBps",
+        "type": "uint32"
+      }
+    ],
+    "name": "optimalSwapAmount",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "swapAmount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "swappedAmount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "swap0",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "owner",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "pair",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "baseToken",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "baseAmount",
+        "type": "uint256"
+      }
+    ],
+    "name": "partitionAndAddLiquidity",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "liquidity",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "pair",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "baseToken",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "baseAmount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "farmAmount",
+        "type": "uint256"
+      }
+    ],
+    "name": "rebalanceAndAddLiquidity",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "liquidity",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "factory",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "liquidity",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "internalType": "address[]",
+        "name": "path1",
+        "type": "address[]"
+      },
+      {
+        "internalType": "address[]",
+        "name": "path2",
+        "type": "address[]"
+      },
+      {
+        "internalType": "uint256",
+        "name": "dstTokenMin",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "deadline",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint32",
+        "name": "feeBps",
+        "type": "uint32"
+      }
+    ],
+    "name": "removeLiquidityAndSwapToDstToken",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "dstTokenAmount",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "lpAdress",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "liquidity",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "internalType": "address[]",
+        "name": "path1",
+        "type": "address[]"
+      },
+      {
+        "internalType": "address[]",
+        "name": "path2",
+        "type": "address[]"
+      },
+      {
+        "internalType": "uint256",
+        "name": "dstTokenMin",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "deadline",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint32",
+        "name": "feeBps",
+        "type": "uint32"
+      }
+    ],
+    "name": "removeLiquidityAndSwapToETH",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "dstTokenAmount",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "factory",
+        "type": "address"
+      },
+      {
+        "internalType": "uint32",
+        "name": "feeBps",
+        "type": "uint32"
+      }
+    ],
+    "name": "setFeeOf",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "owner_",
+        "type": "address"
+      }
+    ],
+    "name": "setOwner",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]
