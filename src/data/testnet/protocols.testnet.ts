@@ -97,7 +97,7 @@ const chains = [
   TESTNET_CHAINID.Ethereum,
   TESTNET_CHAINID.Polygon,
   TESTNET_CHAINID.Gnosis,
-  TESTNET_CHAINID.Aurora,
+  // TESTNET_CHAINID.Aurora,
 ];
 
 const bridgeAddressBook = {

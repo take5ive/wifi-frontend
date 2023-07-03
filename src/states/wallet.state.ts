@@ -1,7 +1,6 @@
 import {
   atom,
   useRecoilState,
-  useRecoilValue,
   useResetRecoilState,
 } from "recoil";
 import { connectMetamask } from "../utils/metamask";
@@ -9,7 +8,7 @@ import { CHAINID } from "interfaces/config-data.interface";
 import { providers } from "ethers";
 import { useNavigate } from "react-router-dom";
 import { recoilPersist } from "recoil-persist";
-import {useAccount as useWagmiAccount, useNetwork as useWagmiNetwork, useWalletClient} from "wagmi"
+import {useAccount as useWagmiAccount, useNetwork as useWagmiNetwork} from "wagmi"
 
 const { persistAtom } = recoilPersist();
 export const accountAtom = atom<string | null>({
